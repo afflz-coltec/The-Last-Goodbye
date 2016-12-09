@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col s12 m10 offset-m1">
+    <div class="row">
+      <form>
+        <h4 class="center">Novo livro</h4>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <p>
+              Nome:
+            </p>
+            <input id="" type="text" ng-model="livro.name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m4">
+            <p>
+              Editora
+            </p>
+            <input id="" type="text" ng-model="livro.editora">
+          </div>
+          <div class="input-field col s12 m4">
+            <p>
+              Edição
+            </p>
+            <input id="" type="text" ng-model="livro.edicao">
+          </div>
+          <div class="input-field col s12 m4">
+            <p>
+              Gênero
+            </p>
+            <input id="" type="text" ng-model="livro.genero">
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="input-field col m6 s12">
+            <p>
+              Imagem:
+            </p>
+            <input id="" type="text" ng-model="livro.link">
+          </div>
+          <div class="col m5 offset-m1 white center mainpanel">
+            <img src="{{livro.link}}" width="30%" height="30%" />
+          </div>
+        </div>
+        <div class="row">
+          <p>
+            Descrição:
+          </p>
+          <div class="input-field col s12">
+            <textarea id="textarea" class="materialize-textarea" length="300" ng-model="livro.description"></textarea>
+          </div>
+        </div>
+
+        <div class="row"> <div class="col m12"><h1> </h1></div></div>
+
+
+        <div class="row">
+          <button class="btn col s5 offset-s7 m2 offset-m9 black" ng-click="add()">Adicionar</button>
+        </div>
+        <div class="row"> <div class="col m12"><h1> </h1></div></div>
+
+      </form>
+    </div>
+  </div>
+</div>
