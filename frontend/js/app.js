@@ -70,7 +70,7 @@ livrodapp.library = [{}];
 livrodapp.library [0] = {
 	link : "/imgs/capajoao.png",
 	id : "0",
-	name : "As aventuras de joão, só que sem o pé de feijão",
+	name : "As aventuras de João, só que sem o pé de feijão",
 	editora : "Coltec",
 	edicao : "2a",
 	genero : "ficção",
@@ -181,6 +181,9 @@ livrodapp.factory('service', function($http,$cookieStore) {
 livrodapp.controller("mainController",['service','$scope','$cookieStore', function(service,$scope,$cookieStore) {
 	var self = this;
 	self.livros = [];
+	self.sorted_livros = [];
+	$scope.search = "";
+	$scope.option = "";
 
 	self.livros = livrodapp.library;
 
@@ -344,6 +347,10 @@ livrodapp.controller("deletelivroController",['service','$location','$scope','$r
 	$scope.burn = function() {
 		console.log("FOI");
 		livrodapp.library.splice($routeParams.livroid,1);
+
+		for (var i = 0; i < livrodapp.library.length; i++) {
+			livrodapp.library[i].id = i;
+		}
 
 
 		alert($scope.livro.name + " deletado com sucesso");
